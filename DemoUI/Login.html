@@ -1,0 +1,156 @@
+<head>
+		<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="cssFile.css">
+		<script type="text/javascript" src="jsFile.js"></script> 
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+		<script type="text/javascript" src="mainController.js"></script> 
+<style>
+
+/* Overriding styles */
+
+::-webkit-input-placeholder {
+   font-size: 18px!important;
+}
+
+.inputTextBox{
+		font-size:18px;
+		display: block;
+		padding: 0px 10px;
+		font-family:'Titillium Web', sans-serif;
+	}
+	
+.inputTextBoxRegistration{
+		font-size: 15px;
+		display: block;
+		padding: 0px 10px;
+		font-family: Arial;
+	}
+
+
+.tab-group li a{
+	padding: 10px;
+}
+ 
+.backGroundPic{ 
+    /* The image used 
+    background-image:url(images/108588_15052811170027901024.jpg); */
+	background-image:url(http://pix0.agoda.net/hotelimages/108/108588/108588_15052811170027901024.jpg?s=);
+	
+    /* background-image:url(images/Koh-lipe2.jpg);
+	
+   background-image:url(images/Koh-lipe.jpg);
+	
+   background-image:url(images/Koh-Lipe-Thailand.jpg);
+	
+   background-image:url(images/Koh_Lipe_island_coast.jpg);*/
+	
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
+
+</style>
+</head>
+<body class="backGroundPic">
+<div class="form" style="background-color:rgba(40, 35, 47, 1)" ng-app="myApp">
+
+ <div ng-controller="usersCntrl">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab "><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content" >
+        
+      <!-- Registration Screen Code Starts Here-->
+		<div id="signup">   
+		
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap col-xs-12 form-group" style="padding:0px">
+              <input type="text" placeholder="First Name *" class="form-control inputTextBoxRegistration" required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap col-xs-12 form-group" style="padding:0px">
+              <input type="text" placeholder="Last Name *" class="form-control inputTextBoxRegistration" required autocomplete="off"/>
+            </div>
+          </div>
+		  
+          <div class="field-wrap col-xs-12 form-group" style="padding:0px">
+            <input type="number" min='0' oninput="validity.valid||(value='');" placeholder="Employee Number *" class="form-control inputTextBoxRegistration" required autocomplete="off"/>
+          </div>
+
+          <!--<div class="field-wrap">
+            <input type="email" placeholder="Email Address" class="form-control inputTextBoxRegistration" required autocomplete="off"/>
+          </div>-->
+		  
+            <div class="field-wrap col-xs-12 form-group" style="padding:0px">
+              <input type="text" placeholder="Designation *" class="form-control inputTextBoxRegistration" required autocomplete="off" />
+            </div>
+			
+			<div class="field-wrap col-xs-12  form-group" style="padding:0px">
+              <input type="text"  placeholder="Service Line *" class="form-control inputTextBoxRegistration" required autocomplete="off"/>
+            </div>		  
+		  
+            <div class="field-wrap col-xs-12 form-group" style="padding:0px">
+              <input type="text"  placeholder="Role *" class="form-control inputTextBoxRegistration" required autocomplete="off"/>
+            </div>
+			
+		  
+          <div class="top-row">
+          <div class="field-wrap col-xs-12 input-lg form-group" style="padding:0px">
+            <input type="password" id="password1" Style="font-size: 14px; font-family:arial;" placeholder="Set A Password *" class="form-control inputTextBoxRegistration" required autocomplete="off" data-toggle="password"/>
+          </div>
+		  <div class="field-wrap col-xs-12 input-lg form-group" style="padding:0px">
+            <input type="password" id="password2" Style="font-size: 14px; font-family:arial;" placeholder="Confirm Password *" class="form-control inputTextBoxRegistration" required autocomplete="off" data-toggle="password"/>
+          </div>
+		  </div>
+          <p class="forgot" style="color:#337ab7">* All Fields are Mandatory</p>
+          <button type="submit" class="button button-block"  style="padding:5px 0px"/>Get Started</button>
+          
+          </form>
+
+        </div>
+		
+		 <!-- Login Screen Code Starts Here-->
+		  <div id="login">   
+		<br><br>
+          <!--<h1 style="color:White">Welcome Back!</h1><br><br> -->
+          
+          <form action="/" method="post">
+           
+            <div class="field-wrap col-xs-12 input-lg form-group" style="padding:0px">
+            
+            <input  type="email" placeholder="Email Address" class="form-control inputTextBox" required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap col-xs-12 input-lg form-group" style="padding:0px">
+            <input type="password" id="password" required placeholder="Password" class="form-control inputTextBox" autocomplete="off" data-toggle="password"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button  class="button btn-lg center-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+    </div>
+</div> <!-- /form -->
+</body>
